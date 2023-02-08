@@ -20,3 +20,29 @@ O componente "lê" os componentes já renderizados através da Key, ou seja, o q
 Dessa maneira ele otimiza a renderização do componente único.
 
 XXX => Não usar o índice do Array como chave. (Fianl da aula entendendo a Key).
+
+# Imutabilidade
+As variáveis não sofrem mutação. É criado um novo valor (um espaço na memória).
+
+# Diferença na chamada da função?
+```js
+
+onClick={handleDeleteComment}
+onClick={handleDeleteComment()}
+
+```
+
+# Closures no React
+Sempre ao atualizar um valor que dependa de seu valor anterior, recomenda-se usar o padrão abaixo:
+
+```js
+function handleLikeComment() {
+  
+  setLikeCount((state) => {
+    return state + 1;
+  });
+
+}
+
+```
+Veja o código aplicado no componente de Comment.jsx no botão de likes.
